@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Tianran Zhang</title>
+    <link>/project/</link>
+      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Projects</title>
+      <link>/project/</link>
+    </image>
+    
+    <item>
+      <title>SCR Package</title>
+      <link>/project/scr/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/project/scr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Breast Cancer Analysis</title>
+      <link>/project/breastcanceranalysis/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/project/breastcanceranalysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny App</title>
+      <link>/project/shanyapp/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/project/shanyapp/</guid>
+      <description>&lt;p&gt;Me and my group designed a shiny app (I was mainly in charge of coding part in ui and server) for Happy Valley Meat Company to calculate and visualize the invironmental impact for each cut of meat as the midterm project in Data Science class. The shinyio website can be found &lt;a href=&#34;https://tianran.shinyapps.io/midterm_project/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FFD</title>
+      <link>/project/ffd/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/project/ffd/</guid>
+      <description>&lt;p&gt;Apply the algorithm about 3D Free Form Deformation (FFD) with the toolkit VTK. Plus, utilizing the 3D Face Resruction model PRNet, we realize the workflow of 2D-Face -&amp;gt; 3D-Face -&amp;gt; 3D-FFD. It&amp;rsquo;s a course project about visualization, working with Jing Wang and Donghao Li. The report can be found &lt;a href=&#34;../pj_report.pdf&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

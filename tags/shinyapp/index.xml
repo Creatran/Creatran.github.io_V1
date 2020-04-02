@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shinyapp | Tianran Zhang</title>
+    <link>/tags/shinyapp/</link>
+      <atom:link href="/tags/shinyapp/index.xml" rel="self" type="application/rss+xml" />
+    <description>shinyapp</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>shinyapp</title>
+      <link>/tags/shinyapp/</link>
+    </image>
+    
+    <item>
+      <title>Shiny App</title>
+      <link>/project/shanyapp/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/project/shanyapp/</guid>
+      <description>&lt;p&gt;Me and my group designed a shiny app (I was mainly in charge of coding part in ui and server) for Happy Valley Meat Company to calculate and visualize the invironmental impact for each cut of meat as the midterm project in Data Science class. The shinyio website can be found &lt;a href=&#34;https://tianran.shinyapps.io/midterm_project/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

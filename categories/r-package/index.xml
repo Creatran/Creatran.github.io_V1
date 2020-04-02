@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R package | Tianran Zhang</title>
+    <link>/categories/r-package/</link>
+      <atom:link href="/categories/r-package/index.xml" rel="self" type="application/rss+xml" />
+    <description>R package</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 27 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>R package</title>
+      <link>/categories/r-package/</link>
+    </image>
+    
+    <item>
+      <title>How to Create an R Package</title>
+      <link>/post/rpackage/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/rpackage/</guid>
+      <description>
+
+
+&lt;p&gt;R packages are strong tools in R coding. Whenever we code with R to do some complex data analyzing, R packages will always help. It is cool to make one’s R package to share code with others. I learned how to create an R package in the Data Science class and decided to write the procedure in this blog. I Hope it is helpful for you.&lt;br /&gt;
+Ready to build your R package? Let’s start!&lt;/p&gt;
+&lt;div id=&#34;make-a-new-project-in-a-new-directory&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;1. Make a new project in a new directory&lt;/h2&gt;
+&lt;p&gt;In RStudio, go to File &amp;gt;&amp;gt; New Project. Select to make a new project in a new directory.
+&lt;img src=&#34;../1.jpg&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Select the project type as an R Package.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../2.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Name the R Package, select the working directory where the R package will be in, and click ‘Create Package’.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../3.jpg&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Now go to the directory and check out what you have!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../40.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;You can see the same thing inside of RStudio:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../4.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;write-your-functions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;2. Write your functions&lt;/h2&gt;
+&lt;p&gt;After you have created the package, install, and library these two packages:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(devtools)
+library(roxygen2)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Go to File &amp;gt;&amp;gt; New File &amp;gt;&amp;gt; R Script. In this R Script we will write to create an R file with a function for our package:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Sample function 
+
+diamond_plot &amp;lt;- function(df, varx, vary){
+  ggplot(df, aes(x=get(varx), y=get(vary))) +
+  geom_point(shape=23, fill=&amp;quot;blue&amp;quot;, color=&amp;quot;darkred&amp;quot;, size=3)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once we are done writing the function, we will save this R Script as diamond_plot.R in the R folder of our package.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../5.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Let’s take a look at what this function does.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Draw sample plot with the function.
+
+df.test &amp;lt;- data.frame(x = rnorm(10),
+                      y = rnorm(10))
+diamond_plot(df.test, &amp;#39;x&amp;#39;, &amp;#39;y&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../60.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;add-documentation-for-your-package.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;3. Add documentation for your package.&lt;/h2&gt;
+&lt;p&gt;While you have the script diamond_plot.R open, go to Code &amp;gt;&amp;gt; Insert Roxygen Skeleton. Make sure your cursor is inside of the function when you do this.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../61.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Now you can fill in your documentation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../6.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Go up a level to find the DESCRIPTION file, click on the DESCRIPTION file and edit it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../7.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;add-data-to-your-package&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;4. Add Data to your package&lt;/h2&gt;
+&lt;p&gt;Make a data folder.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../8.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Save data in this folder using a .RData object.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Sample data
+sample_data &amp;lt;- data.frame(x = rnorm(10),
+                          y = rnorm(10),
+                          z = rnorm(10))
+                          
+save(sample_data, file = &amp;#39;ExamplePackage/data/sample_data.RData&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;    &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;install-and-check-the-packages&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;5. Install and Check the Packages&lt;/h2&gt;
+&lt;p&gt;Run the following code in the same working directory as the package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;document()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And then go down one level in the working directory and run the following code.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;setwd(&amp;#39;..&amp;#39;)
+install(&amp;#39;ExamplePackage&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;check-what-you-got&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;6. Check what you got!&lt;/h2&gt;
+&lt;p&gt;Type the following commands in the console, and you can see the documentation of your package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;?diamond_plot
+
+data(sample_data)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../9.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;upload-and-share-your-r-package-with-others.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;7. Upload and share your R Package with others.&lt;/h2&gt;
+&lt;p&gt;You can put your package on Github. Make a new repository with the same name as your package, and make it public.&lt;/p&gt;
+&lt;p&gt;Congratulations! Now you can create your R package, install the package from the Github or give it to a friend to use with the following code.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;#39;yourusername/ExamplePackage&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

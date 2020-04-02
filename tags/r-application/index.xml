@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R Application | Tianran Zhang</title>
+    <link>/tags/r-application/</link>
+      <atom:link href="/tags/r-application/index.xml" rel="self" type="application/rss+xml" />
+    <description>R Application</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>R Application</title>
+      <link>/tags/r-application/</link>
+    </image>
+    
+    <item>
+      <title>SCR Package</title>
+      <link>/project/scr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/scr/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

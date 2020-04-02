@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science Class | Tianran Zhang</title>
+    <link>/categories/data-science-class/</link>
+      <atom:link href="/categories/data-science-class/index.xml" rel="self" type="application/rss+xml" />
+    <description>Data Science Class</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 27 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Data Science Class</title>
+      <link>/categories/data-science-class/</link>
+    </image>
+    
+    <item>
+      <title>ggplot2 - A Strong Package Used in Data Visulization</title>
+      <link>/post/ggplot2/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/ggplot2/</guid>
+      <description>
+
+
+&lt;p&gt;ggplot2 is an R package created by Hadley Wickham. It has a great use in statistical data visulization. I got in touch with it in the first year of my graduate study and I had so much fun presenting statistical plot with the help of ggplot2! However, there are so many aesthetics and parameter settings in this package, and it is easy to mixed up. &lt;a href=&#34;/post/ggplot2_files/ggplot2%20CheatSheet.pdf&#34;&gt;ggplot cheatsheet&lt;/a&gt; is always ready for help. I decided to summarise the most common used aesthetics of ggplot2 as well as how to make a qualified plot in statistics. Hope you may find this blog useful!&lt;/p&gt;
+&lt;div id=&#34;practical-thins-to-make-a-plot-better&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Practical thins to make a plot better&lt;/h3&gt;
+&lt;p&gt;There are 8 criterions one has to meet in order to make a plot better:&lt;br /&gt;
+• Label the axis&lt;br /&gt;
+• Have a title&lt;br /&gt;
+• Make sure the title and axis are large enough&lt;br /&gt;
+• Label the plot or have a legend&lt;br /&gt;
+• Text on plots is great&lt;br /&gt;
+• Use color and fill effectively groups&lt;br /&gt;
+• Don’t make a plot overly complex – make two plots&lt;br /&gt;
+• Get rid of non-essentials&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;common-used-aesthetics&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Common used aesthetics&lt;/h3&gt;
+&lt;div id=&#34;geom&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Geom&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• geom_point()
+• geom_smooth()  
+• geom_boxplot() 
+• geom_bar()
+• geom_histogram()
+• geom_density()     
+• geom_linerange()
+• geom_text()
+• geom_curve(x = , xend = , y = , yend = , arrow = arrow(length = unit(0.3, &amp;#39;cm &amp;#39;)), curvature = 0.5)
+• stat_function()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tips: if the variable is not continues, use bar graphs to display the distribution of categorical variables instead of histogram or density plot.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;theme&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;THEME&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• theme(axis.text = element_text(),
+       axis.tltle = element_text(),
+       plot.title = element_text(),
+       legend.position = , 
+       legend.title = element_blank(),
+       axis.text.x = element_text(size = 10, angle = 90, hjust = 1, face = &amp;#39;bold&amp;#39;)
+• ylab(&amp;#39;) 
+• xlab()
+• ggtitle(&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;guides-legend&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;GUIDES &amp;amp; LEGEND&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• guides()
+• ylim()
+• coord_trans() 
+• coord_flip()
+• scale_y_continuous() 
+• scale_y_discrete()
+• scale_color()  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tips: The only difference between coord_trans() and scale_y_continuous() is where the tick marks on the axis are drawn (scale_y_continuous has the tick more evenly)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;facet&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;FACET&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• facet_wrap(~, nrow = )
+• facet_grid(~, labeller = label_both)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;color&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;COLOR&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• RColorBrewer  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;library(RColorBrewer)&lt;br /&gt;
+display.brewer.all()&lt;br /&gt;
+g + scale_fill_brewer(palette = ‘Accent’, ‘Dark2’)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;• wesanderson  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;library(wesanderson)&lt;br /&gt;
+ag + scale_fill_brewer(‘Zissou1’)&lt;br /&gt;
+g + scale_fill_manual(values = wes_palette(n = 3, name = ‘Zissou1’, ‘FantasticFox1’))&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;examples&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Examples&lt;/h3&gt;
+&lt;p&gt;ggplot is so powerful a tool that one can recreate almost any plot with R. Here is an excellent blog post from &lt;a href=&#34;https://simplystatistics.org/2019/08/28/you-can-replicate-almost-any-plot-with-ggplot2/&#34;&gt;Rafa Irizarry&lt;/a&gt; on how to recreate plots using ggplot2 from blog Simply Statistics.&lt;br /&gt;
+On Data Science class, we recreated a plot from a &lt;a href=&#34;https://fivethirtyeight.com/features/%20how-to-tell-someones-age-when-all-you-know-is-her-name/&#34;&gt;FiveThirtyEight&lt;/a&gt; blog. That interesting experience shows how useful ggplot2 is and I am writing this blog to show how we recreate that plot.&lt;/p&gt;
+&lt;div id=&#34;data-wrangling&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Data wrangling&lt;/h4&gt;
+&lt;p&gt;We used the make_babynames_dist() function in the mdsr package to add some more convenient variables to our dataset and to filter for only the data that is relevant to people alive in 2014.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;BabynamesDist &amp;lt;- make_babynames_dist() 
+head(BabynamesDist)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 x 9
+##    year sex   name      n   prop alive_prob count_thousands age_today
+##   &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt;  &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt;           &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;
+## 1  1900 F     Mary  16706 0.0526          0           16.7        114
+## 2  1900 F     Helen  6343 0.0200          0            6.34       114
+## 3  1900 F     Anna   6114 0.0192          0            6.11       114
+## 4  1900 F     Marg…  5304 0.0167          0            5.30       114
+## 5  1900 F     Ruth   4765 0.0150          0            4.76       114
+## 6  1900 F     Eliz…  4096 0.0129          0            4.10       114
+## # … with 1 more variable: est_alive_today &amp;lt;dbl&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We filtered the data so we only have babies with the name Joseph who are male.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;joseph &amp;lt;- BabynamesDist %&amp;gt;%
+  filter(name == &amp;#39;Joseph&amp;#39; &amp;amp; sex == &amp;#39;M&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-visualization&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Data visualization&lt;/h4&gt;
+&lt;p&gt;We ploted the number of Joseph’s born each year who are estimated to be alive on January 1, 2014. We will get that estimate by mutiplying the number of Josephs born in a year by the probability that a person from that year will be alive on January 1, 2014. We added the line for the number of Josephs born each year to our plot&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;name_plot &amp;lt;- ggplot(data = joseph) + 
+  geom_bar(aes(x = year, y = count_thousands * alive_prob),
+           stat = &amp;#39;identity&amp;#39;, fill = &amp;#39;#b2d7e9&amp;#39;, 
+           colour = &amp;#39;white&amp;#39;) + 
+  geom_line(aes(x = year, y = count_thousands), 
+            lwd = 1) + 
+  ylab(&amp;quot;Number of People (thousands)&amp;quot;) + 
+  xlab(NULL) + 
+  theme(axis.title = element_text(size = 16, 
+                                  face = &amp;quot;bold&amp;quot;))
+
+name_plot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/ggplot2_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
+Next we need to add a darker blue bar indicating the median year of birth for a Jospeh alive on January 1, 2014.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;median_yob &amp;lt;- with(joseph, wtd.quantile(year, est_alive_today, probs = .5))
+
+name_plot &amp;lt;- name_plot + 
+  geom_bar(stat = &amp;#39;identity&amp;#39;, color = &amp;#39;white&amp;#39;, fill = &amp;#39;#008fd5&amp;#39;, 
+           aes(x = year, y = if_else(year == median_yob,
+                           est_alive_today/1000, 0)))
+name_plot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/ggplot2_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Finally we updated the axis labels&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;name_plot_2 &amp;lt;- name_plot + 
+  ggtitle(&amp;quot;Age Distribution of American Boys Joseph&amp;quot;) + 
+  geom_text(x = 1940, y = 30, 
+            label = &amp;quot;Number of Josephs \n born each year&amp;quot;) + 
+  geom_text(x = 1929, y = 12, 
+            label = &amp;quot;Number of Josephs \n born each year 
+            \n estimated to be alive&amp;quot;, colour = &amp;quot;#b2d7e9&amp;quot;) + 
+  geom_text(x = 2003, y = 37, 
+            label = &amp;quot;The median \nliving Joseoph 
+            \n is 37 years old&amp;quot;, colour = &amp;quot;darkgray&amp;quot;)+
+  geom_curve(x = 1995, xend = 1974, y = 37, yend = 24, 
+             arrow = arrow(length = unit(.3, &amp;quot;cm&amp;quot;)), 
+             curvature = .5) + ylim(0, 40) + 
+  theme(plot.title = element_text(size = 22))
+
+name_plot_2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/ggplot2_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;
+We can also change the name to “Jessie” and the sex to “female”&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;name_plot %+% filter(BabynamesDist, name == &amp;#39;Josephine&amp;#39; &amp;amp; sex == &amp;#39;F&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/ggplot2_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Create an R Package</title>
+      <link>/post/rpackage/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/rpackage/</guid>
+      <description>
+
+
+&lt;p&gt;R packages are strong tools in R coding. Whenever we code with R to do some complex data analyzing, R packages will always help. It is cool to make one’s R package to share code with others. I learned how to create an R package in the Data Science class and decided to write the procedure in this blog. I Hope it is helpful for you.&lt;br /&gt;
+Ready to build your R package? Let’s start!&lt;/p&gt;
+&lt;div id=&#34;make-a-new-project-in-a-new-directory&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;1. Make a new project in a new directory&lt;/h2&gt;
+&lt;p&gt;In RStudio, go to File &amp;gt;&amp;gt; New Project. Select to make a new project in a new directory.
+&lt;img src=&#34;../1.jpg&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Select the project type as an R Package.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../2.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Name the R Package, select the working directory where the R package will be in, and click ‘Create Package’.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../3.jpg&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Now go to the directory and check out what you have!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../40.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;You can see the same thing inside of RStudio:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../4.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;write-your-functions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;2. Write your functions&lt;/h2&gt;
+&lt;p&gt;After you have created the package, install, and library these two packages:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(devtools)
+library(roxygen2)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Go to File &amp;gt;&amp;gt; New File &amp;gt;&amp;gt; R Script. In this R Script we will write to create an R file with a function for our package:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Sample function 
+
+diamond_plot &amp;lt;- function(df, varx, vary){
+  ggplot(df, aes(x=get(varx), y=get(vary))) +
+  geom_point(shape=23, fill=&amp;quot;blue&amp;quot;, color=&amp;quot;darkred&amp;quot;, size=3)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once we are done writing the function, we will save this R Script as diamond_plot.R in the R folder of our package.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../5.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Let’s take a look at what this function does.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Draw sample plot with the function.
+
+df.test &amp;lt;- data.frame(x = rnorm(10),
+                      y = rnorm(10))
+diamond_plot(df.test, &amp;#39;x&amp;#39;, &amp;#39;y&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../60.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;add-documentation-for-your-package.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;3. Add documentation for your package.&lt;/h2&gt;
+&lt;p&gt;While you have the script diamond_plot.R open, go to Code &amp;gt;&amp;gt; Insert Roxygen Skeleton. Make sure your cursor is inside of the function when you do this.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../61.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Now you can fill in your documentation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../6.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Go up a level to find the DESCRIPTION file, click on the DESCRIPTION file and edit it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../7.bmp&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;add-data-to-your-package&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;4. Add Data to your package&lt;/h2&gt;
+&lt;p&gt;Make a data folder.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../8.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Save data in this folder using a .RData object.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Sample data
+sample_data &amp;lt;- data.frame(x = rnorm(10),
+                          y = rnorm(10),
+                          z = rnorm(10))
+                          
+save(sample_data, file = &amp;#39;ExamplePackage/data/sample_data.RData&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;    &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;install-and-check-the-packages&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;5. Install and Check the Packages&lt;/h2&gt;
+&lt;p&gt;Run the following code in the same working directory as the package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;document()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And then go down one level in the working directory and run the following code.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;setwd(&amp;#39;..&amp;#39;)
+install(&amp;#39;ExamplePackage&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;check-what-you-got&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;6. Check what you got!&lt;/h2&gt;
+&lt;p&gt;Type the following commands in the console, and you can see the documentation of your package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;?diamond_plot
+
+data(sample_data)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../9.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;upload-and-share-your-r-package-with-others.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;7. Upload and share your R Package with others.&lt;/h2&gt;
+&lt;p&gt;You can put your package on Github. Make a new repository with the same name as your package, and make it public.&lt;/p&gt;
+&lt;p&gt;Congratulations! Now you can create your R package, install the package from the Github or give it to a friend to use with the following code.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;#39;yourusername/ExamplePackage&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

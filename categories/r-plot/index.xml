@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R plot | Tianran Zhang</title>
+    <link>/categories/r-plot/</link>
+      <atom:link href="/categories/r-plot/index.xml" rel="self" type="application/rss+xml" />
+    <description>R plot</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 27 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>R plot</title>
+      <link>/categories/r-plot/</link>
+    </image>
+    
+    <item>
+      <title>ggplot2 - A Strong Package Used in Data Visulization</title>
+      <link>/post/ggplot2/</link>
+      <pubDate>Sun, 27 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/ggplot2/</guid>
+      <description>
+
+
+&lt;p&gt;ggplot2 is an R package created by Hadley Wickham. It has a great use in statistical data visulization. I got in touch with it in the first year of my graduate study and I had so much fun presenting statistical plot with the help of ggplot2! However, there are so many aesthetics and parameter settings in this package, and it is easy to mixed up. &lt;a href=&#34;/post/ggplot2_files/ggplot2%20CheatSheet.pdf&#34;&gt;ggplot cheatsheet&lt;/a&gt; is always ready for help. I decided to summarise the most common used aesthetics of ggplot2 as well as how to make a qualified plot in statistics. Hope you may find this blog useful!&lt;/p&gt;
+&lt;div id=&#34;practical-thins-to-make-a-plot-better&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Practical thins to make a plot better&lt;/h3&gt;
+&lt;p&gt;There are 8 criterions one has to meet in order to make a plot better:&lt;br /&gt;
+• Label the axis&lt;br /&gt;
+• Have a title&lt;br /&gt;
+• Make sure the title and axis are large enough&lt;br /&gt;
+• Label the plot or have a legend&lt;br /&gt;
+• Text on plots is great&lt;br /&gt;
+• Use color and fill effectively groups&lt;br /&gt;
+• Don’t make a plot overly complex – make two plots&lt;br /&gt;
+• Get rid of non-essentials&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;common-used-aesthetics&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Common used aesthetics&lt;/h3&gt;
+&lt;div id=&#34;geom&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Geom&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• geom_point()
+• geom_smooth()  
+• geom_boxplot() 
+• geom_bar()
+• geom_histogram()
+• geom_density()     
+• geom_linerange()
+• geom_text()
+• geom_curve(x = , xend = , y = , yend = , arrow = arrow(length = unit(0.3, &amp;#39;cm &amp;#39;)), curvature = 0.5)
+• stat_function()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tips: if the variable is not continues, use bar graphs to display the distribution of categorical variables instead of histogram or density plot.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;theme&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;THEME&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• theme(axis.text = element_text(),
+       axis.tltle = element_text(),
+       plot.title = element_text(),
+       legend.position = , 
+       legend.title = element_blank(),
+       axis.text.x = element_text(size = 10, angle = 90, hjust = 1, face = &amp;#39;bold&amp;#39;)
+• ylab(&amp;#39;) 
+• xlab()
+• ggtitle(&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;guides-legend&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;GUIDES &amp;amp; LEGEND&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• guides()
+• ylim()
+• coord_trans() 
+• coord_flip()
+• scale_y_continuous() 
+• scale_y_discrete()
+• scale_color()  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tips: The only difference between coord_trans() and scale_y_continuous() is where the tick marks on the axis are drawn (scale_y_continuous has the tick more evenly)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;facet&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;FACET&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• facet_wrap(~, nrow = )
+• facet_grid(~, labeller = label_both)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;color&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;COLOR&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;• RColorBrewer  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;library(RColorBrewer)&lt;br /&gt;
+display.brewer.all()&lt;br /&gt;
+g + scale_fill_brewer(palette = ‘Accent’, ‘Dark2’)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;• wesanderson  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;library(wesanderson)&lt;br /&gt;
+ag + scale_fill_brewer(‘Zissou1’)&lt;br /&gt;
+g + scale_fill_manual(values = wes_palette(n = 3, name = ‘Zissou1’, ‘FantasticFox1’))&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;examples&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Examples&lt;/h3&gt;
+&lt;p&gt;ggplot is so powerful a tool that one can recreate almost any plot with R. Here is an excellent blog post from &lt;a href=&#34;https://simplystatistics.org/2019/08/28/you-can-replicate-almost-any-plot-with-ggplot2/&#34;&gt;Rafa Irizarry&lt;/a&gt; on how to recreate plots using ggplot2 from blog Simply Statistics.&lt;br /&gt;
+On Data Science class, we recreated a plot from a &lt;a href=&#34;https://fivethirtyeight.com/features/%20how-to-tell-someones-age-when-all-you-know-is-her-name/&#34;&gt;FiveThirtyEight&lt;/a&gt; blog. That interesting experience shows how useful ggplot2 is and I am writing this blog to show how we recreate that plot.&lt;/p&gt;
+&lt;div id=&#34;data-wrangling&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Data wrangling&lt;/h4&gt;
+&lt;p&gt;We used the make_babynames_dist() function in the mdsr package to add some more convenient variables to our dataset and to filter for only the data that is relevant to people alive in 2014.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;BabynamesDist &amp;lt;- make_babynames_dist() 
+head(BabynamesDist)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 x 9
+##    year sex   name      n   prop alive_prob count_thousands age_today
+##   &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt;  &amp;lt;dbl&amp;gt;      &amp;lt;dbl&amp;gt;           &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;
+## 1  1900 F     Mary  16706 0.0526          0           16.7        114
+## 2  1900 F     Helen  6343 0.0200          0            6.34       114
+## 3  1900 F     Anna   6114 0.0192          0            6.11       114
+## 4  1900 F     Marg…  5304 0.0167          0            5.30       114
+## 5  1900 F     Ruth   4765 0.0150          0            4.76       114
+## 6  1900 F     Eliz…  4096 0.0129          0            4.10       114
+## # … with 1 more variable: est_alive_today &amp;lt;dbl&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We filtered the data so we only have babies with the name Joseph who are male.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;joseph &amp;lt;- BabynamesDist %&amp;gt;%
+  filter(name == &amp;#39;Joseph&amp;#39; &amp;amp; sex == &amp;#39;M&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-visualization&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Data visualization&lt;/h4&gt;
+&lt;p&gt;We ploted the number of Joseph’s born each year who are estimated to be alive on January 1, 2014. We will get that estimate by mutiplying the number of Josephs born in a year by the probability that a person from that year will be alive on January 1, 2014. We added the line for the number of Josephs born each year to our plot&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;name_plot &amp;lt;- ggplot(data = joseph) + 
+  geom_bar(aes(x = year, y = count_thousands * alive_prob),
+           stat = &amp;#39;identity&amp;#39;, fill = &amp;#39;#b2d7e9&amp;#39;, 
+           colour = &amp;#39;white&amp;#39;) + 
+  geom_line(aes(x = year, y = count_thousands), 
+            lwd = 1) + 
+  ylab(&amp;quot;Number of People (thousands)&amp;quot;) + 
+  xlab(NULL) + 
+  theme(axis.title = element_text(size = 16, 
+                                  face = &amp;quot;bold&amp;quot;))
+
+name_plot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/ggplot2_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
+Next we need to add a darker blue bar indicating the median year of birth for a Jospeh alive on January 1, 2014.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;median_yob &amp;lt;- with(joseph, wtd.quantile(year, est_alive_today, probs = .5))
+
+name_plot &amp;lt;- name_plot + 
+  geom_bar(stat = &amp;#39;identity&amp;#39;, color = &amp;#39;white&amp;#39;, fill = &amp;#39;#008fd5&amp;#39;, 
+           aes(x = year, y = if_else(year == median_yob,
+                           est_alive_today/1000, 0)))
+name_plot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/ggplot2_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Finally we updated the axis labels&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;name_plot_2 &amp;lt;- name_plot + 
+  ggtitle(&amp;quot;Age Distribution of American Boys Joseph&amp;quot;) + 
+  geom_text(x = 1940, y = 30, 
+            label = &amp;quot;Number of Josephs \n born each year&amp;quot;) + 
+  geom_text(x = 1929, y = 12, 
+            label = &amp;quot;Number of Josephs \n born each year 
+            \n estimated to be alive&amp;quot;, colour = &amp;quot;#b2d7e9&amp;quot;) + 
+  geom_text(x = 2003, y = 37, 
+            label = &amp;quot;The median \nliving Joseoph 
+            \n is 37 years old&amp;quot;, colour = &amp;quot;darkgray&amp;quot;)+
+  geom_curve(x = 1995, xend = 1974, y = 37, yend = 24, 
+             arrow = arrow(length = unit(.3, &amp;quot;cm&amp;quot;)), 
+             curvature = .5) + ylim(0, 40) + 
+  theme(plot.title = element_text(size = 22))
+
+name_plot_2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/ggplot2_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;
+We can also change the name to “Jessie” and the sex to “female”&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;name_plot %+% filter(BabynamesDist, name == &amp;#39;Josephine&amp;#39; &amp;amp; sex == &amp;#39;F&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/ggplot2_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
