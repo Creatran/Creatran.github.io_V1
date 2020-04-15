@@ -5,12 +5,100 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 12 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Projects</title>
       <link>/project/</link>
     </image>
+    
+    <item>
+      <title>Heart Disease Prediction with ML methods</title>
+      <link>/project/poster/</link>
+      <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/project/poster/</guid>
+      <description>&lt;p&gt;The World Health Organization has estimated that 12 million deaths occur worldwide every year due to the heart disease. In the United States, cardiovascular diseases are the number 1 cause of death in adults. Early diagnosis is the key to prevent heart related deaths. Potential cardiovascular patients are often sent for multiple tests, and these test results help the doctors to make a diagnosis. The accuracy of the diagnosis often relies on the individual doctor’s knowledge and experiences. In order to improve the accuracy of the diagnosis, a group of medical researchers collected patient data from 4 national hospitals; two in the United States, and two in Europe. The data set HD.xlsx includes the patients age, gender, 11 test results, and ﬁnal diagnosis. The patient data from the two US hospitals and two European hospitals are saved in the 4 tabs, labeled “US1”, “US2”, “EU1”, “EU2”, respectively. The dictionary of all variables is saved in the tab “Dictionary”. Assume that no patient within is correlated with other patients within hospital.&lt;/p&gt;
+
+&lt;p&gt;In order to ﬁnd the factors that signiﬁcantly contribute to the accuracy of diagnosis, I conducted two approaches sequentially.&lt;br /&gt;
+a) Detect the presence of CVD: dichotomize the severity variable and consider the presence of narrowing vessel as response variable.&lt;/p&gt;
+
+&lt;p&gt;b) Predict the severity of CVD: build a model with the severity of heart disease as response variable.&lt;/p&gt;
+
+&lt;p&gt;I developed several statistical models including GLM, KNN, SVM, and SDA to use the medical test results to help predict the likelihood of the presence of heart disease as well as its severity. The overall prediction accuracy is 84.78% in detecting the presence of CVD, and 64.1% in detecting the severity of CVD.&lt;/p&gt;
+
+&lt;p&gt;I also took a consideration on the costs of different test, and revise the final model with 6 predictors to balance between cost and effectivceness. The prediction accuracy for the revided model is 80.43% in predicting the presence of CVD, and 53.3% in predicting the severity of CVD.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Test&lt;/th&gt;
+&lt;th&gt;Cost&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;cp&lt;/td&gt;
+&lt;td&gt;Immediate results, no additional cost&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;thestbps&lt;/td&gt;
+&lt;td&gt;Immediate results, no additional cost&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;chol&lt;/td&gt;
+&lt;td&gt;$7.27, need one day laboratory work&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;fbs&lt;/td&gt;
+&lt;td&gt;$5.20, need one day laboratory work&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;restecg&lt;/td&gt;
+&lt;td&gt;$15.50, need one day laboratory work&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;thalach&lt;/td&gt;
+&lt;td&gt;$102.90, need one day laboratory work&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;exang&lt;/td&gt;
+&lt;td&gt;$87.30, need one day laboratory work&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;oldpeak&lt;/td&gt;
+&lt;td&gt;$87.30, need one day laboratory work&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;slope&lt;/td&gt;
+&lt;td&gt;$87.30, need one day laboratory work&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ca&lt;/td&gt;
+&lt;td&gt;$100.90, need one day laboratory work&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;thal&lt;/td&gt;
+&lt;td&gt;$102.90, need one day laboratory work&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The whole poster can be found &lt;a href=&#34;Poster_Tianran.pdf&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;br /&gt;
+The full data set could be found and downloaded &lt;a href=&#34;HD.xlsx&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;br /&gt;
+The data anlysis process including all the corresponding codes, tables, and images can be found &lt;a href=&#34;https://pedantic-hoover-44e272.netlify.com/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>SCR Package</title>
@@ -42,7 +130,7 @@
       <link>/project/ffd/</link>
       <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
       <guid>/project/ffd/</guid>
-      <description>&lt;p&gt;Apply the algorithm about 3D Free Form Deformation (FFD) with the toolkit VTK. Plus, utilizing the 3D Face Resruction model PRNet, we realize the workflow of 2D-Face -&amp;gt; 3D-Face -&amp;gt; 3D-FFD. It&amp;rsquo;s a course project about visualization, working with Jing Wang and Donghao Li. The report can be found &lt;a href=&#34;../pj_report.pdf&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Apply the algorithm about 3D Free Form Deformation (FFD) with the toolkit VTK. Plus, utilizing the 3D Face Resruction model PRNet, we realize the workflow of 2D-Face -&amp;gt; 3D-Face -&amp;gt; 3D-FFD. It&amp;rsquo;s a course project about visualization, working with Jing Wang and Donghao Li. The report can be found &lt;a href=&#34;pj_report.pdf&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;(In Chinese)&lt;/p&gt;
 </description>
     </item>
     
