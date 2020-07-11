@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Big Data | Tianran Zhang</title>
+    <link>/tags/big-data/</link>
+      <atom:link href="/tags/big-data/index.xml" rel="self" type="application/rss+xml" />
+    <description>Big Data</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 10 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Big Data</title>
+      <link>/tags/big-data/</link>
+    </image>
+    
+    <item>
+      <title>ESP 2019 Data Analysis</title>
+      <link>/project/microbiome/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>/project/microbiome/</guid>
+      <description>&lt;p&gt;This is a research assistant role I have been working on. This project aims at developing a more general analysis template for analyzing Human Microbiome Project (HMP) 16S microbiome data. The new template will processe the raw sequence data of human microbiome composition with a higher speed and newer algorithm.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
